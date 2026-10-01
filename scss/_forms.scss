@@ -1,0 +1,21 @@
+/* 10. FORMS, PROFILE, ABOUT ----------------------------------------- */
+.auth { padding: 56px 24px 80px; display: grid; place-items: start center; }
+.auth-card { width: 100%; max-width: 460px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+.form-ok { display: none; color: var(--success); background: var(--success-tint); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; font-weight: 600; }
+.demo-note { display: flex; gap: 8px; align-items: flex-start; font-size: 0.85rem; color: var(--muted); margin: 16px 0 0; }
+.demo-note .i { margin-top: 4px; flex: none; }
+select.input { appearance: auto; }
+.danger-zone { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-color: var(--danger); }
+.danger-zone .h3, .danger-zone p { margin-bottom: 4px; }
+.faq { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 4px 20px; margin-bottom: 10px; }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; list-style: none; padding: 14px 0; font-weight: 600; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .i { transition: transform 0.2s; color: var(--muted); }
+.faq[open] summary .i { transform: rotate(180deg); }
+.faq p { color: var(--muted); margin: 0 0 14px; }
+.member { display: flex; align-items: center; gap: 16px; }
+.member h3 { margin: 0 0 4px; }
+.member p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.form-ok:target { display: block; }

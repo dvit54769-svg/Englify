@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Log in | Englify</title>
+  <meta name="description" content="Englify is a small web-based English learning website. Learn English step by step with lessons, practice and quizzes.">
+  <meta name="theme-color" content="#1557D6">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <input type="checkbox" id="navToggle" class="nav-toggle sr-only" aria-label="Open or close the menu">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Englify home">
+        <img src="assets/logo.png" alt="Englify: Fluency, Confidence, Progress" width="150" height="51">
+      </a>
+      <nav class="main-nav" aria-label="Main">
+          <a data-nav="home" href="index.html">Home</a>
+          <a data-nav="courses" href="courses.html">Courses</a>
+          <a data-nav="level-test" href="level-test.html">Level Test</a>
+          <a data-nav="practice" href="practice.html">Practice</a>
+          <a data-nav="quiz" href="quiz.html">Quiz</a>
+          <a data-nav="progress" href="progress.html">Progress</a>
+          <a data-nav="about" href="about.html">About</a>
+        <div class="nav-auth">
+          <a class="btn btn-secondary" href="login.html">Log in</a>
+          <a class="btn btn-primary" href="signup.html">Sign up</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <div class="user-slot">
+          <a class="btn btn-secondary btn-sm" href="login.html">Log in</a>
+          <a class="btn btn-primary btn-sm hide-sm" href="signup.html">Sign up</a>
+        </div>
+        <label for="navToggle" class="icon-btn menu-btn" aria-hidden="true"><svg class="i" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></label>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="auth"><div class="card auth-card"><h1 class="h2">Welcome back</h1><p class="muted">Log in to continue your learning.</p>
+      <form action="courses.html" method="get">
+        <div class="field"><label for="email">Email</label><input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="password">Password</label><input class="input" id="password" type="password" autocomplete="current-password" required minlength="6"></div>
+        <button class="btn btn-primary btn-block" type="submit"><svg class="i" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"></path></svg> Log in</button>
+      </form>
+      <p class="muted center">New to Englify? <a href="signup.html">Create an account</a></p>
+      <p class="demo-note"><svg class="i" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg> Demo page. There is no server, so nothing is checked or saved. You can learn without an account.</p>
+    </div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo.png" alt="Englify" width="130" height="44">
+        <p class="footer-tag">Learn English. Build Confidence. Step by Step.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Learn</h2>
+        <a href="courses.html">Courses</a><a href="level-test.html">Level Test</a><a href="practice.html">Practice</a><a href="quiz.html">Quiz</a>
+      </nav>
+      <nav aria-label="Footer, more">
+        <h2>Englify</h2>
+        <a href="progress.html">Progress</a><a href="about.html">About</a><a href="login.html">Log in</a><a href="signup.html">Sign up</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <span>Small steps. Big progress.</span>
+      <span>A student project by Veasna Touch, Chantrea Bis and Sreymai Louern.</span>
+    </div>
+  </footer>
+
+  <script src="js/englify.js"></script>
+</body>
+</html>
