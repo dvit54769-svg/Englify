@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- ទំព័រដើម (Home) -->
   <url>
     <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- ទំព័រវគ្គសិក្សា (Courses) -->
   <url>
     <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ទំព័រតេស្តសមត្ថភាព (Level Test) -->
+  <url>
+    <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- ទំព័រអនុវត្ត (Practice) -->
+  <url>
+    <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ទំព័រ Quiz -->
+  <url>
+    <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ទំព័រតាមដានលទ្ធផល (Progress) -->
+  <url>
+    <loc>https://englify-wepdeveloper-c.vercel.app/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ទំព័រអំពីយើង (About) -->
+  <url>
+    <loc>https://https://englify-wepdeveloper-c.vercel.app/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
