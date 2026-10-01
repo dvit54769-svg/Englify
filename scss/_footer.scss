@@ -1,0 +1,9 @@
+/* 11. FOOTER --------------------------------------------------------- */
+.site-footer { background: var(--surface); border-top: 1px solid var(--border); padding-top: 48px; margin-top: 24px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; padding-bottom: 32px; }
+.footer-logo { display: block; height: 44px; width: auto; margin-bottom: 12px; }
+.footer-tag { color: var(--muted); font-style: italic; max-width: 32ch; }
+.site-footer h2 { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.site-footer nav a { display: block; padding: 4px 0; color: var(--text); text-decoration: none; }
+.site-footer nav a:hover { color: var(--primary); text-decoration: underline; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }

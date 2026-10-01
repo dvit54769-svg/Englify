@@ -1,0 +1,142 @@
+// Motion: everything that makes the site feel smooth, in one place.
+// Curves and speeds come from the --ease-* and --t-* tokens (see _tokens.scss).
+// This file loads last so it can refine the transitions set in the other files.
+// Users who ask their device for reduced motion get none of it (see the last rule).
+
+/* 1. Page basics ----------------------------------------------------- */
+html { scrollbar-gutter: stable; }                 // no sideways jump when a scrollbar appears
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }      // lets height animate to "auto"
+}
+
+@keyframes page-in { from { opacity: 0; } }
+@keyframes rise    { from { opacity: 0; transform: translateY(14px); } }
+main { animation: page-in 0.4s var(--ease-out) backwards; }
+
+/* 2. Links, buttons, inputs: one easing everywhere ------------------- */
+a {
+  transition: color var(--t-fast) var(--ease-out), background-color var(--t-fast) var(--ease-out),
+              text-decoration-color var(--t-fast) var(--ease-out);
+}
+.btn {
+  transition: background-color var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out), box-shadow var(--t-med) var(--ease-out),
+              transform var(--t-fast) var(--ease-out), filter var(--t-fast) var(--ease-out);
+}
+.btn:not(:disabled):not([disabled]):active { transform: translateY(0) scale(0.97); transition-duration: 0.08s; }
+.icon-btn, .tag, .opt-key, .avatar, .skill-chips li {
+  transition: background-color var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+}
+.icon-btn:active { transform: scale(0.94); }
+.main-nav a[data-nav] { transition: background-color var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out); }
+.input, .textarea {
+  transition: border-color var(--t-fast) var(--ease-out), background-color var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+/* 3. Cards that are links: gentle lift, arrow nudges forward --------- */
+.skill-card, .lesson-card {
+  transition: transform var(--t-med) var(--ease-out), border-color var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+.skill-card:active, .lesson-card:active { transform: translateY(-1px) scale(0.99); transition-duration: 0.1s; }
+.skill-card .go, .go-link .i { transition: transform var(--t-med) var(--ease-out), color var(--t-med) var(--ease-out); }
+.skill-card:hover .go { transform: translateX(4px); color: var(--tone); }
+.lesson-card:hover .go-link .i { transform: translateX(4px); }
+
+/* 4. Header: soft shadow once the page has scrolled ------------------ */
+.site-header { transition: box-shadow var(--t-med) var(--ease-out); }
+.site-header.is-scrolled { box-shadow: 0 6px 24px rgba(23, 37, 84, 0.09); }
+
+/* 5. Home hero: content settles in one piece at a time --------------- */
+.hero-copy > * { animation: rise 0.7s var(--ease-out) backwards; }
+.hero-visual > * { animation: rise 0.8s var(--ease-out) backwards; }
+@for $i from 1 through 6 {
+  .hero-copy > :nth-child(#{$i}) { animation-delay: 0.05s * $i; }
+}
+@for $i from 1 through 4 {
+  .hero-visual > :nth-child(#{$i}) { animation-delay: 0.2s + 0.1s * $i; }
+}
+
+/* 6. Progress bars grow from empty ----------------------------------- */
+@keyframes bar-grow { from { width: 0; } }
+.bar > span { transition: width 0.7s var(--ease-out); animation: bar-grow 0.9s var(--ease-out) 0.25s backwards; }
+
+/* 7. Answers: choices, feedback and the score fade and settle in ----- */
+.option {
+  transition: border-color var(--t-fast) var(--ease-out), background-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+}
+.option:hover { transform: translateX(3px); }
+.option:active { transform: scale(0.99); }
+
+// Feedback boxes grow open. Browsers that can animate height ("interpolate-size")
+// get the growing version; the others get a fade and slide.
+@keyframes fb-in      { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes fb-in-grow { from { opacity: 0; transform: translateY(-8px); height: 0; margin-top: 0; padding-block: 0; } }
+:root { --fb-anim: fb-in; }
+@supports (interpolate-size: allow-keywords) { :root { --fb-anim: fb-in-grow; } }
+.fb { overflow: hidden; }
+.q:has(input[data-right]:checked) .fb.ok,
+.q:has(input:checked:not([data-right])) .fb.bad,
+.fb.show { animation: var(--fb-anim) 0.4s var(--ease-out) backwards; }
+
+// A small nudge on a wrong answer and a pop on the right one: quick, not harsh.
+@keyframes nudge   { 20% { transform: translateX(-5px); } 45% { transform: translateX(4px); } 70% { transform: translateX(-2px); } 100% { transform: none; } }
+@keyframes key-pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+.option:has(input:checked:not([data-right])), .input.is-wrong { animation: nudge 0.4s var(--ease-out); }
+.q:has(input:checked) .option:has(input[data-right]) .opt-key { animation: key-pop 0.45s var(--ease-spring); }
+
+@keyframes pop-in { from { opacity: 0; transform: translateY(16px) scale(0.97); } }
+.score-card { animation: pop-in 0.55s var(--ease-spring) backwards; }
+
+/* 8. FAQ and script boxes slide open and closed ---------------------- */
+.faq { transition: border-color var(--t-med) var(--ease-out), box-shadow var(--t-med) var(--ease-out); }
+.faq:hover { border-color: var(--border-strong); }
+.faq summary .i { transition: transform var(--t-med) var(--ease-out); }
+@supports (interpolate-size: allow-keywords) and selector(::details-content) {
+  .faq::details-content, .script::details-content {
+    block-size: 0; overflow: hidden;
+    transition: block-size var(--t-med) var(--ease-out), content-visibility var(--t-med) allow-discrete;
+  }
+  .faq[open]::details-content, .script[open]::details-content { block-size: auto; }
+}
+
+/* 9. Mobile menu: fades and slides down instead of snapping ---------- */
+@keyframes menu-item-in { from { opacity: 0; transform: translateY(-6px); } }
+@media (max-width: 1240px) {
+  .main-nav {
+    display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+    position: absolute; top: 100%; left: 0; right: 0; margin: 0; padding: 12px 16px 20px;
+    background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - var(--header-h)); overflow-y: auto;
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-10px);
+    // "visibility" waits until the fade is done, so closing looks as smooth as opening
+    transition: opacity var(--t-med) var(--ease-out), transform var(--t-med) var(--ease-out), visibility 0s linear var(--t-med);
+  }
+  .nav-auth { display: flex; gap: 10px; padding: 12px 0 0; }
+  .nav-auth .btn { flex: 1; }
+  .nav-toggle:checked ~ .header-inner .main-nav { opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition-delay: 0s; }
+  .nav-toggle:checked ~ .header-inner .main-nav > * { animation: menu-item-in 0.35s var(--ease-out) backwards; }
+  @for $i from 1 through 8 {
+    .nav-toggle:checked ~ .header-inner .main-nav > :nth-child(#{$i}) { animation-delay: 0.04s * $i; }
+  }
+  .nav-toggle:checked ~ .header-inner .menu-btn { background: var(--primary-tint); border-color: var(--primary); color: var(--primary); }
+}
+
+/* 10. Scroll reveal: englify.js adds .rv to blocks below the fold, then .rv-in
+   when they scroll into view. Blocks already on screen are never hidden. */
+.rv { opacity: 0; transform: translateY(18px);
+  transition: opacity var(--t-slow) var(--ease-out) var(--rv-d, 0s), transform var(--t-slow) var(--ease-out) var(--rv-d, 0s); }
+.rv.rv-in { opacity: 1; transform: none; }
+
+/* 11. Reduced motion: no animation, no transitions, no smooth scrolling.
+   (The same rule exists in _responsive.scss; it is repeated here so this file
+   can be used on its own.) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  .rv { opacity: 1; transform: none; }
+}

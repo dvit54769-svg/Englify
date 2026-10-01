@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+/* 1. TOKENS ---------------------------------------------------------- */
+:root {
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius: #{v.$radius};
+  --radius-lg: #{v.$radius-lg};
+  --header-h: #{v.$header-h};
+
+  /* motion: one set of curves and speeds so everything moves the same way */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.45, 0.64, 1);
+  --t-fast: 0.18s;
+  --t-med: 0.32s;
+  --t-slow: 0.6s;
+
+  --bg: #{v.$bg};
+  --surface: #{v.$surface};
+  --surface-2: #{v.$surface-2};
+  --text: #{v.$text};
+  --muted: #{v.$muted};
+  --border: #{v.$border};
+  --border-strong: #{v.$border-strong};
+  --primary: #{v.$primary};
+  --btn-primary: #{v.$btn-primary};
+  --btn-primary-hover: #{v.$btn-primary-hover};
+  --primary-tint: #{v.$primary-tint};
+  --secondary: #{v.$secondary};
+  --btn-secondary: #{v.$btn-secondary};
+  --secondary-tint: #{v.$secondary-tint};
+  --accent: #{v.$accent};
+  --accent-text: #{v.$accent-text};
+  --accent-tint: #{v.$accent-tint};
+  --on-accent: #{v.$on-accent};
+  --success: #{v.$success};
+  --success-tint: #{v.$success-tint};
+  --danger: #{v.$danger};
+  --danger-tint: #{v.$danger-tint};
+  --ring-track: #{v.$ring-track};
+  --disabled-bg: #{v.$disabled-bg};
+  --disabled-text: #{v.$disabled-text};
+
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --shadow: 0 1px 2px rgba(23, 37, 84, 0.06), 0 8px 24px rgba(23, 37, 84, 0.08);
+  --shadow-lg: 0 16px 48px rgba(23, 37, 84, 0.16);
+}
+
+/* colour "tones" used by cards, bubbles and rings */
+.tone-blue   { --tone: var(--primary);     --tone-tint: var(--primary-tint);   --tone-solid: var(--btn-primary);   --on-tone: #FFFFFF; }
+.tone-purple { --tone: var(--secondary);   --tone-tint: var(--secondary-tint); --tone-solid: var(--btn-secondary); --on-tone: #FFFFFF; }
+.tone-orange { --tone: var(--accent-text); --tone-tint: var(--accent-tint);    --tone-solid: var(--accent);        --on-tone: var(--on-accent); }

@@ -1,0 +1,54 @@
+/* 8. EXERCISE RUNNER ------------------------------------------------- */
+.runner-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.runner-prog { flex: 1; min-width: 0; }
+.runner-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
+.runner-meta strong { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.passage { margin-bottom: 16px; background: var(--surface-2); box-shadow: none; }
+.passage h3 { font-size: 1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--primary); }
+.passage p { margin: 0; font-size: 1.05rem; line-height: 1.7; }
+.q-card { padding: 32px; }
+.q-skill { margin-bottom: 14px; }
+.q-text { font-size: clamp(1.3rem, 1rem + 1.2vw, 1.7rem); font-weight: 700; margin-bottom: 22px; line-height: 1.3; }
+.blank { display: inline-block; width: 68px; border-bottom: 3px solid var(--primary); margin: 0 6px; transform: translateY(2px); }
+.options { display: grid; gap: 12px; }
+.option { display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 14px; background: var(--surface); color: var(--text); font: 600 1.05rem/1.3 var(--font); text-align: left; cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.15s; }
+.option:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-tint); transform: translateX(2px); }
+.opt-key { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--surface-2); color: var(--muted); font-size: 0.85rem; font-weight: 700; flex: none; }
+.option.is-correct { border-color: var(--success); background: var(--success-tint); }
+.option.is-correct .opt-key { background: var(--success); color: #fff; }
+.option.is-wrong { border-color: var(--danger); background: var(--danger-tint); }
+.option.is-wrong .opt-key { background: var(--danger); color: #fff; }
+.option.is-picked { border-color: var(--primary); background: var(--primary-tint); }
+.option:disabled { cursor: default; }
+.audio-card { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 16px; border-radius: 16px; background: var(--accent-tint); margin-bottom: 22px; }
+.audio-card small { color: var(--accent-text); font-weight: 500; }
+.audio-card .hint { margin: 0; }
+.say-card { padding: 22px; border-radius: 16px; background: var(--primary-tint); margin-bottom: 18px; }
+.say-text { font-size: 1.35rem; font-weight: 600; margin: 0; line-height: 1.4; }
+.say-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hint { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
+.type-form { display: flex; gap: 12px; }
+.input, .textarea { width: 100%; padding: 12px 14px; min-height: 48px; border: 2px solid var(--border-strong); border-radius: 12px; background: var(--surface); color: var(--text); font: 500 1rem/1.4 var(--font); }
+.input:focus, .textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-tint); }
+.input.is-correct { border-color: var(--success); background: var(--success-tint); }
+.input.is-wrong { border-color: var(--danger); background: var(--danger-tint); }
+.input[aria-invalid="true"], .textarea[aria-invalid="true"] { border-color: var(--danger); }
+.textarea { resize: vertical; min-height: 150px; }
+.wr-meta { margin: 12px 0; }
+.checks { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 6px; font-size: 0.92rem; color: var(--muted); }
+.checks li { display: flex; gap: 8px; align-items: center; }
+.checks li.ok { color: var(--success); }
+.fb { margin-top: 16px; padding: 20px 22px; border-radius: 18px; border: 2px solid; animation: fadeUp 0.25s ease both; }
+.fb.ok { background: var(--success-tint); border-color: var(--success); }
+.fb.bad { background: var(--danger-tint); border-color: var(--danger); }
+.fb p { margin: 0 0 10px; }
+.fb-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 1.15rem; }
+.fb.ok .fb-head .i { color: var(--success); }
+.fb.bad .fb-head .i { color: var(--danger); }
+.fb-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.transcript { font-size: 0.95rem; color: var(--muted); }
+.result { padding: 40px; }
+.result-grid { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+.result h2 { margin-bottom: 6px; }
+.result .lead { margin-bottom: 8px; }
+.result-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }

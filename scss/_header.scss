@@ -1,0 +1,19 @@
+/* 4. HEADER ---------------------------------------------------------- */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--border); }
+.header-inner { display: flex; align-items: center; gap: 16px; height: var(--header-h); }
+.brand { display: inline-flex; align-items: center; flex: none; border-radius: 12px; }
+.brand img { display: block; height: 42px; width: auto; }
+.main-nav { display: flex; align-items: center; gap: 2px; margin-left: 8px; flex: 1; min-width: 0; }
+.main-nav a[data-nav] { padding: 8px 9px; border-radius: 10px; color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; white-space: nowrap; }
+.main-nav a[data-nav]:hover { background: var(--surface-2); }
+.main-nav a[data-nav].active { background: var(--primary-tint); color: var(--primary); font-weight: 700; }
+.nav-auth { display: none; }
+.header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.user-slot { display: flex; align-items: center; gap: 8px; }
+.avatar { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--tone-solid, var(--btn-primary)); color: var(--on-tone, #fff); font-weight: 700; font-size: 1.15rem; flex: none; }
+.icon-btn { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-size: 1.05rem; }
+.icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+.menu-btn { display: none; }
+
+/* menu button without JavaScript: a hidden checkbox + a label */
+.nav-toggle:focus-visible ~ .header-inner .menu-btn { outline: 3px solid var(--accent); outline-offset: 2px; }

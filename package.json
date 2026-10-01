@@ -1,0 +1,13 @@
+{
+  "name": "englify-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Englify: English learning website (plain HTML pages, styles written in Sass)",
+  "scripts": {
+    "sass": "sass --watch scss:css",
+    "build:css": "sass scss:css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

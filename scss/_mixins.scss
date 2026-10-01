@@ -1,0 +1,18 @@
+@mixin theme-vars($map) {
+  @each $name, $value in $map {
+    --#{$name}: #{$value};
+  }
+}
+
+// Write dark-mode styles once. Applies for the OS dark setting
+// (unless the user forced light) and for the manual dark toggle.
+@mixin on-dark {
+  :root[data-theme="dark"] & {
+    @content;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) & {
+      @content;
+    }
+  }
+}

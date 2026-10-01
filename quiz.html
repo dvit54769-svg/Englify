@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quiz | Englify</title>
+  <meta name="description" content="Englify is a small web-based English learning website. Learn English step by step with lessons, practice and quizzes.">
+  <meta name="theme-color" content="#1557D6">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <input type="checkbox" id="navToggle" class="nav-toggle sr-only" aria-label="Open or close the menu">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Englify home">
+        <img src="assets/logo.png" alt="Englify: Fluency, Confidence, Progress" width="150" height="51">
+      </a>
+      <nav class="main-nav" aria-label="Main">
+          <a data-nav="home" href="index.html">Home</a>
+          <a data-nav="courses" href="courses.html">Courses</a>
+          <a data-nav="level-test" href="level-test.html">Level Test</a>
+          <a data-nav="practice" href="practice.html">Practice</a>
+          <a data-nav="quiz" href="quiz.html" class="active" aria-current="page">Quiz</a>
+          <a data-nav="progress" href="progress.html">Progress</a>
+          <a data-nav="about" href="about.html">About</a>
+        <div class="nav-auth">
+          <a class="btn btn-secondary" href="login.html">Log in</a>
+          <a class="btn btn-primary" href="signup.html">Sign up</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <div class="user-slot">
+          <a class="btn btn-secondary btn-sm" href="login.html">Log in</a>
+          <a class="btn btn-primary btn-sm hide-sm" href="signup.html">Sign up</a>
+        </div>
+        <label for="navToggle" class="icon-btn menu-btn" aria-hidden="true"><svg class="i" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></label>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <header class="page-head"><div class="container"><p class="eyebrow">Quiz</p><h1>Test what you have learned</h1><p class="lead">Ten mixed questions with instant feedback. Pick a level to start.</p></div></header>
+    <section class="section-tight"><div class="container"><div class="grid grid-3">
+      <article class="card level-card tone-blue"><div class="level-badge">A1</div><h3>Beginner quiz</h3><p>10 questions about grammar, vocabulary and listening.</p><a class="btn btn-primary" href="quiz-a1.html">Start A1 quiz <svg class="i" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></a></article>
+      <article class="card level-card tone-purple"><div class="level-badge">A2</div><h3>Elementary quiz</h3><p>10 questions about grammar, vocabulary and listening.</p><a class="btn btn-primary" href="quiz-a2.html">Start A2 quiz <svg class="i" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></a></article>
+      <article class="card level-card tone-orange"><div class="level-badge">B1</div><h3>Intermediate quiz</h3><p>10 questions about grammar, vocabulary and listening.</p><a class="btn btn-primary" href="quiz-b1.html">Start B1 quiz <svg class="i" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></a></article>
+    </div>
+    <div class="card intro-card gap-top"><h2 class="h3">How it works</h2><ol class="numlist"><li>Choose a level.</li><li>Answer 10 questions about grammar, vocabulary and listening.</li><li>See if each answer is correct, with a short explanation.</li><li>Press Check my score to see your result. Your best score is saved on the Progress page.</li></ol></div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo.png" alt="Englify" width="130" height="44">
+        <p class="footer-tag">Learn English. Build Confidence. Step by Step.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Learn</h2>
+        <a href="courses.html">Courses</a><a href="level-test.html">Level Test</a><a href="practice.html">Practice</a><a href="quiz.html">Quiz</a>
+      </nav>
+      <nav aria-label="Footer, more">
+        <h2>Englify</h2>
+        <a href="progress.html">Progress</a><a href="about.html">About</a><a href="login.html">Log in</a><a href="signup.html">Sign up</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <span>Small steps. Big progress.</span>
+      <span>A student project by Veasna Touch, Chantrea Bis and Sreymai Louern.</span>
+    </div>
+  </footer>
+
+  <script src="js/englify.js"></script>
+</body>
+</html>
